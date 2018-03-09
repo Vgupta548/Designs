@@ -1,10 +1,6 @@
 package GuitarApp.Test;
 
-import GuitarApp.Models.BackWoodenType;
-import GuitarApp.Models.FrontWoodenType;
 import GuitarApp.Models.Guitar;
-import GuitarApp.Models.GuitarBuilder;
-import GuitarApp.Models.GuitarType;
 import GuitarApp.Services.Inventory;
 
 public class GuitarTest {
@@ -12,14 +8,12 @@ public class GuitarTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Inventory inventory = new Inventory();
-		inventory.add("v001", GuitarBuilder.BAILEY, "GUI001", GuitarType.Acoustic, BackWoodenType.ASDC, FrontWoodenType.ASEED, 2000.00);
-		inventory.add("v001", GuitarBuilder.BAILEY, "GUI001", GuitarType.Archtop, BackWoodenType.ASSA, FrontWoodenType.GTDFS, 23000.00);
-		inventory.add("v001", GuitarBuilder.DOOGMA, "GUI002", GuitarType.Bass, BackWoodenType.ASSA, FrontWoodenType.GTDFS, 1000.00);
-		inventory.add("v001", GuitarBuilder.DOOGMA, "GUI033", GuitarType.Archtop, BackWoodenType.ASSA, FrontWoodenType.GTRFED, 22000.00);
-		inventory.add("v001", GuitarBuilder.HALO, "GUI031", GuitarType.DoubleNeck, BackWoodenType.CDF, FrontWoodenType.CFRED, 8000.00);
-		inventory.add("v001", GuitarBuilder.JACKSON, "GUI031", GuitarType.Archtop, BackWoodenType.CDF, FrontWoodenType.CFRED, 5000.00);
+		inventory.add("v001", "AKS", "GUI001", "ELECTRIC", "highStrngth", "loow", 2000.00);
+		inventory.add("v002", "AKS", "GUI002", "non-ELECTRIC", "highStrngth", "loow", 1000.00);
+		inventory.add("v003", "AKS", "GUI011", "ELECTRIC", "highStrngth", "loow", 2000.00);
+		inventory.add("v004", "AKS", "GUI012", "nonELECTRIC", "highStrngth", "loow", 6000.00);
 		
-		Guitar searchGuitar = new Guitar(null, GuitarBuilder.BAILEY, "GUI001", GuitarType.Archtop, BackWoodenType.ASSA, FrontWoodenType.GTDFS, null);
+		Guitar searchGuitar = new Guitar(null, "AKS", "GUI002", "non-ELECTRIC", "highStrngth", "loow", null);
 		Guitar guitar = inventory.search(searchGuitar);
 		if(guitar != null){
 			System.out.println("we found your guitar");
@@ -33,7 +27,7 @@ public class GuitarTest {
 			System.out.println("Sorry! your guitar is not present");
 		}
 		
-		searchGuitar = new Guitar(null, GuitarBuilder.BAILEY, "GUI0012", GuitarType.Archtop, BackWoodenType.ASSA, FrontWoodenType.GTDFS, null);
+		searchGuitar = new Guitar(null, "AKS1", "GUI002", "non-ELECTRIC", "highStrngth", "loow", null);
 		Guitar guitar1 = inventory.search(searchGuitar);
 		if(guitar1 != null){
 			System.out.println("we found your guitar");
