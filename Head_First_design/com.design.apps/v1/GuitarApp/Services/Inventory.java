@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import GuitarApp.Models.Guitar;
+import v1.GuitarApp.Models.Guitar;
 
 public class Inventory {
 	

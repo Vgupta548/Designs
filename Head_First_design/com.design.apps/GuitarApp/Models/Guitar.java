@@ -2,19 +2,18 @@ package GuitarApp.Models;
 
 public class Guitar {
 
-	
 	String serialNumber;
-	String builderName;
+	GuitarBuilder builderName;
 	String model;
-	String type;
-	String backWoodenType;
-	String frontWoodenType;
+	GuitarType type;
+	BackWoodenType backWoodenType;
+	FrontWoodenType frontWoodenType;
 	Double price;
 	
-	public Guitar(String serialNumber, String builderName, String model,
-			String type, String backWoodenType, String frontWoodenType,
-			Double price) {
-		super();
+	public Guitar(String serialNumber, GuitarBuilder builderName, String model,
+			GuitarType type, BackWoodenType backWoodenType,
+			FrontWoodenType frontWoodenType, Double price) {
+		
 		this.serialNumber = serialNumber;
 		this.builderName = builderName;
 		this.model = model;
@@ -30,10 +29,10 @@ public class Guitar {
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
-	public String getBuilderName() {
+	public GuitarBuilder getBuilderName() {
 		return builderName;
 	}
-	public void setBuilderName(String builderName) {
+	public void setBuilderName(GuitarBuilder builderName) {
 		this.builderName = builderName;
 	}
 	public String getModel() {
@@ -42,22 +41,22 @@ public class Guitar {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getType() {
+	public GuitarType getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(GuitarType type) {
 		this.type = type;
 	}
-	public String getBackWoodenType() {
+	public BackWoodenType getBackWoodenType() {
 		return backWoodenType;
 	}
-	public void setBackWoodenType(String backWoodenType) {
+	public void setBackWoodenType(BackWoodenType backWoodenType) {
 		this.backWoodenType = backWoodenType;
 	}
-	public String getFrontWoodenType() {
+	public FrontWoodenType getFrontWoodenType() {
 		return frontWoodenType;
 	}
-	public void setFrontWoodenType(String frontWoodenType) {
+	public void setFrontWoodenType(FrontWoodenType frontWoodenType) {
 		this.frontWoodenType = frontWoodenType;
 	}
 	public Double getPrice() {

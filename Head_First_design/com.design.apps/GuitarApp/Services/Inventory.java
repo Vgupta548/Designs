@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import GuitarApp.Models.BackWoodenType;
+import GuitarApp.Models.FrontWoodenType;
 import GuitarApp.Models.Guitar;
+import GuitarApp.Models.GuitarBuilder;
+import GuitarApp.Models.GuitarType;
 
 /**
  * @author vgup92
@@ -24,7 +28,9 @@ public class Inventory {
 	 * @param frontWoodenType
 	 * @param price
 	 */
-	public void add(String serialNumber,String builderName,String model,String type,String backWoodenType,String frontWoodenType,Double price ){
+	public void add(String serialNumber, GuitarBuilder builderName, String model,
+			GuitarType type, BackWoodenType backWoodenType,
+			FrontWoodenType frontWoodenType, Double price ){
 		Guitar guitar = new Guitar(serialNumber, builderName, model, type, backWoodenType, frontWoodenType, price);
 		inventory.add(guitar);
 	};
@@ -44,20 +50,20 @@ public class Inventory {
 				if(model == null || model == "" || !model.toLowerCase().equals(inventoryGuitar.getModel().toLowerCase()))
 					continue;
 				
-				String builderName = guitar.getBuilderName();
-				if(builderName == null || builderName == "" || !builderName.toLowerCase().equals(inventoryGuitar.getBuilderName().toLowerCase()))
+				GuitarBuilder builderName = guitar.getBuilderName();
+				if(builderName == null ||  builderName != inventoryGuitar.getBuilderName())
 					continue;
 				
-				String type = guitar.getType();
-				if(type == null || type == "" || !type.toLowerCase().equals(inventoryGuitar.getType().toLowerCase()))
+				GuitarType type = guitar.getType();
+				if(type == null || type != inventoryGuitar.getType())
 					continue;
 				
-				String backWoodenType = guitar.getBackWoodenType();
-				if(backWoodenType == null || backWoodenType == "" || !backWoodenType.toLowerCase().equals(inventoryGuitar.getBackWoodenType().toLowerCase()))
+				BackWoodenType backWoodenType = guitar.getBackWoodenType();
+				if(backWoodenType == null || backWoodenType != inventoryGuitar.getBackWoodenType())
 					continue;
 				
-				String frontWoodenType = guitar.getFrontWoodenType();
-				if(frontWoodenType == null || frontWoodenType == "" || !frontWoodenType.toLowerCase().equals(inventoryGuitar.getFrontWoodenType().toLowerCase()))
+				FrontWoodenType frontWoodenType = guitar.getFrontWoodenType();
+				if(frontWoodenType == null || frontWoodenType != inventoryGuitar.getFrontWoodenType())
 					continue;
 				return inventoryGuitar;
 			}
